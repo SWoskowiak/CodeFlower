@@ -49,6 +49,8 @@ line.link {
           <select id="project">
             <option value="data/views.json">Views</option>
             <option value="data/components.json">Views/Components</option>
+            <option value="data/components.json">Views/Components/list</option>
+            <option value="data/components.json">Views/Components/standard-slideshow</option>
           </select>
           </fieldset>
         </form>
@@ -134,7 +136,7 @@ $ git ls-files | xargs wc -l > symfony.wc
         currentCodeFlower = new CodeFlower("#visualization", w, h).update(json);
       };
 
-      d3.json('data.json', createCodeFlower);
+      d3.json('data/views.json', createCodeFlower);
 
       document.getElementById('project').addEventListener('change', function() {
         d3.json(this.value, createCodeFlower);
